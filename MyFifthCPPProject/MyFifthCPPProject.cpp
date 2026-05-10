@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int main() 
 {
 	const int rows = 2;
 	const int cols = 3;
@@ -51,4 +51,41 @@ int main()
 			cout << '\n';
 		}
 	}
+
+
+	const int size1 = 2;
+	const int size2 = 3;
+	const int size3 = 2;
+	const int size4 = 2;
+
+	int arr4d[size1][size2][size3][size4] = {
+	{
+		{
+			{10, 12},
+			{-2, 5}
+		},
+		{
+			{3, 1},
+			{-2, 8}
+		},
+		{
+			{15, 21},
+			{-2, 56}
+		}
+	},
+	{
+		{
+			{10, 12},
+			{-2, 5}
+		},
+		{
+			{3, 1},
+			{-2, 8}
+		},
+		{
+			{15, 21},
+			{-2, 56}
+		}
+	}
+	};
 }
