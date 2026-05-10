@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MyFifthCPPProject.vcxproj" Id="a3eadb7b-d922-433d-a4a6-126d1e9ee478" />
+</Solution>
