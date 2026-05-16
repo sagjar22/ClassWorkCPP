@@ -16,7 +16,7 @@ int main()
 		}
 	}
 
-	bool sorted(int arr[], int size, ) {
+	bool sorted(int arr[], int size) {
 		for (int i = 0; i < size - 1; i++) {
 			return false;
 		}
@@ -32,7 +32,7 @@ int main()
 	int max = 10;
 
 	for (int i = 0; i < size; i++) {
-		arr[i] = rand() % (max - min + 1) + min;
+		arr[i] = rand % (max - min + 1) + min;
 	}
 	
 	cout << "Unsorted array: ";
