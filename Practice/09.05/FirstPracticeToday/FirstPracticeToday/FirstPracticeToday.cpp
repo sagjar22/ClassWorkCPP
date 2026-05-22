@@ -1,81 +1,141 @@
 #include <iostream>
-#include <Windows.h>
-
 
 using namespace std;
-//1
-//int main()
-//{
-//	SetConsoleCP(1251);
-//	SetConsoleOutputCP(1251);
-//	
-//	const int mon = 12;
-//	int profit[mon] = { 1200 , 2000 , 4000 , 6000 , 7000, 1000 , 4000 , 5000, 6000, 1000, 3000,10000};
-//	int sum = 0;
-//	int maxProfit = profit[0];
-//	int minProfit = profit[0];
-//	int maxMonth = 0;
-//	int minMonth = 0;
-//	int average = 0;
-//
-//	for (int i = 0; i < mon; i++) {
-//		sum += profit[i];
-//		
-//
-//		if (profit[i] > maxProfit) {
-//			maxProfit = profit[i];
-//			maxMonth = i;
-//		}
-//		if (profit[i] < minProfit) {
-//			minProfit = profit[i];
-//			minProfit = i;
-//		}
-//
-//		average = sum / mon;
-//
-//		cout << "All profit per month: " << sum << '\n';
-//		
-//		for (auto money : profit) {
-//			cout << money << '\n';
-//		}
-//
-//		cout << "All profit per year: " << sum << '\n';
-//		cout << "Max profit: " << maxProfit << maxMonth + 1 << '\n';
-//		cout << "Min profit: " << minProfit << minMonth + 1 << '\n';
-//		cout << "Average profit: " << average << '\n';
-//	}
-//}
-//2
-//int main()
-//{
-//	SetConsoleCP(1251);
-//	SetConsoleOutputCP(1251);
-//
-//	const int size = 10;
-//	int numbers[size];
-//
-//	for (int i = 0; i < size; i++) {
-//		cout << "Put in element" << i + 1 << ": ";
-//		cin >> numbers[i];
-//	}
-//	cout << "Massive rotate: \n";
-//
-//}
-//3
+
 int main()
 {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+    // Task 1
+    int profit[12];
+    int sum = 0;
+    int maxMonth = 0, minMonth = 0;
 
-	const int size = 5;
-	int len[size] = { };
-	int nums = 0;
-	
+    cout << "Enter monthly profit:\n";
 
-	for (int i = 0; i < size; i++) {
-		cout << "Put in len every side" << i + 1 << ": ";
-		cin >> nums;
-	}
+    for (int i = 0; i < 12; i++)
+    {
+        cin >> profit[i];
+        sum += profit[i];
 
+        if (profit[i] > profit[maxMonth])
+            maxMonth = i;
+
+        if (profit[i] < profit[minMonth])
+            minMonth = i;
+    }
+
+    double avg = sum / 12.0;
+
+    cout << "Total profit: " << sum << '\n';
+    cout << "Average profit: " << avg << '\n';
+    cout << "Max month: " << maxMonth + 1 << '\n';
+    cout << "Min month: " << minMonth + 1 << '\n';
+
+    cout << '\n';
+
+    // Task 2
+    int arr1[10];
+
+    cout << "Enter 10 elements:\n";
+
+    for (int i = 0; i < 10; i++)
+        cin >> arr1[i];
+
+    cout << "Reverse order:\n";
+
+    for (int i = 9; i >= 0; i--)
+        cout << arr1[i] << '\n';
+
+    cout << '\n';
+
+    // Task 3
+    int pentagon[5];
+    int perimeter = 0;
+
+    cout << "Enter 5 sides of pentagon:\n";
+
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> pentagon[i];
+        perimeter += pentagon[i];
+    }
+
+    cout << "Perimeter: " << perimeter << '\n';
+
+    cout << '\n';
+
+    // Task 4
+    int arr2[9];
+    int compressed[9];
+    int index = 0;
+
+    cout << "Enter 9 elements:\n";
+
+    for (int i = 0; i < 9; i++)
+        cin >> arr2[i];
+
+    for (int i = 0; i < 9; i++)
+    {
+        if (arr2[i] != 0)
+        {
+            compressed[index] = arr2[i];
+            index++;
+        }
+    }
+
+    while (index < 9)
+    {
+        compressed[index] = -1;
+        index++;
+    }
+
+    cout << "Compressed array:\n";
+
+    for (int i = 0; i < 9; i++)
+        cout << compressed[i] << '\n';
+
+    cout << '\n';
+
+    // Task 5
+    int a[5], b[5], result[10];
+    int pos = 0;
+
+    cout << "Enter first array (5 elements):\n";
+
+    for (int i = 0; i < 5; i++)
+        cin >> a[i];
+
+    cout << "Enter second array (5 elements):\n";
+
+    for (int i = 0; i < 5; i++)
+        cin >> b[i];
+
+    for (int i = 0; i < 5; i++)
+        if (a[i] > 0)
+            result[pos++] = a[i];
+
+    for (int i = 0; i < 5; i++)
+        if (b[i] > 0)
+            result[pos++] = b[i];
+
+    for (int i = 0; i < 5; i++)
+        if (a[i] == 0)
+            result[pos++] = 0;
+
+    for (int i = 0; i < 5; i++)
+        if (b[i] == 0)
+            result[pos++] = 0;
+
+    for (int i = 0; i < 5; i++)
+        if (a[i] < 0)
+            result[pos++] = a[i];
+
+    for (int i = 0; i < 5; i++)
+        if (b[i] < 0)
+            result[pos++] = b[i];
+
+    cout << "Result array:\n";
+
+    for (int i = 0; i < 10; i++)
+        cout << result[i] << '\n';
 
 }
